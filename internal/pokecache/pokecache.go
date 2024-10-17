@@ -27,7 +27,7 @@ func NewCache(interval time.Duration) Cache {
 	return c
 }
 
-func (c *Cache) Add (key string, val []byte) {
+func (c *Cache) Add(key string, val []byte) {
 	c.mux.Lock()
 	defer c.mux.Unlock()
 	c.cache[key] = cacheEntry{

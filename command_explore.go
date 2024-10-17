@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-func commandExplore(config *config, args []string) error {
+func commandExplore(config *config, locations []string) error {
 
-	if len(args) < 2 {
+	if len(locations) < 2 {
 		return fmt.Errorf("no location specified")
 	}
 
-	pokemonResp, err := config.pokeapiClient.ListPokemon(args[1])
+	pokemonResp, err := config.pokeapiClient.ListPokemon(locations[1])
 	if err != nil {
 		return fmt.Errorf("invalid location")
 	}
 
-	fmt.Printf("Exploring %s...", args[1])
+	fmt.Printf("Exploring %s...", locations[1])
 	fmt.Println()
 
 	for _, encounter := range pokemonResp.PokemonEncounters {
