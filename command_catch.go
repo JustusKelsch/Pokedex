@@ -27,6 +27,7 @@ func commandCatch(config *config, pokemon []string) error {
 
 	fmt.Printf("%s was caught!\n", pokemonResp.Name)
 	config.pokedex[pokemonResp.Name] = pokemonResp
+	fmt.Println("You may now inspect it with the inspect command.")
 
 	return nil
 }
