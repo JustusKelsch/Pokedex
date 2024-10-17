@@ -61,6 +61,11 @@ type cliCommand struct {
 
 func getCommands() map[string]cliCommand {
 	return map[string]cliCommand{
+		"inspect": {
+			name: "inspect",
+			description: "View the stats of a pokemon you have caught",
+			callback: commandInspect,
+		},
 		"catch": {
 			name: "catch",
 			description: "Attempt to catch a specified pokemon",
